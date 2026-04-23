@@ -3,7 +3,7 @@
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "palette": "blush",
   "fontPair": "cormorant-outfit",
-  "petalDensity": 18,
+  "petalDensity": 40,
   "petalsOn": true,
   "passwordOn": true,
   "password": "momna",
