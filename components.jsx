@@ -242,7 +242,7 @@ function Timeline() {
     {
       date: "Today & Always",
       title: "and the story keeps writing itself",
-      body: "every sunrise since is a new page of the same book. mein tumhein kal, aaj sy ziada piyarr kroon ga</em> — a promise i renew each day.",
+      body: "every sunrise since is a new page of the same book. mein tumhein kal, aaj sy ziada piyarr kroon ga a promise i renew each day.",
     },
   ];
 
@@ -288,7 +288,7 @@ function Gallery() {
       <h2 className="section-title">
         chapters, <span className="accent">one frame</span> at a time
       </h2>
-      <p className="section-sub">hover over each — a little memory rests behind every photograph.</p>
+      <p className="section-sub">hover over each a little memory rests behind every photograph.</p>
 
       <div className="g-grid">
         {items.map(it => (
@@ -340,7 +340,7 @@ function Closing({ years }) {
       <div className="closing-orn">~ and so, my love ~</div>
       <h2 className="closing-title">
         here's to <span className="accent">three</span> years<br/>
-        and every year after — <em>forever</em>.
+        and every year after forever.
       </h2>
       <div className="closing-sig">— Shahzaib</div>
       <div className="closing-date">24 April · 2023 → 2026</div>
