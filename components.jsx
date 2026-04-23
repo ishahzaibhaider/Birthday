@@ -293,9 +293,8 @@ function Gallery() {
       <div className="g-grid">
         {items.map(it => (
           <div key={it.id} className={`g-item ${it.size} reveal`}>
-            <div className="ph">
-              <div className="ph-tag">{it.tag}</div>
-            </div>
+            <img src={`images/${it.tag.split(' · ')[1]}`} alt={it.label}
+                 style={{width:'100%',height:'100%',objectFit:'cover',position:'absolute',inset:0}}/>
             <div className="g-caption">
               <div className="g-cap-label">{it.label}</div>
               <div className="g-cap-title">{it.title}</div>
