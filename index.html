@@ -1,240 +1,267 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A Year of Loving You · [Your Name] & [Her Name]</title>
-  <meta name="description" content="A keepsake for our first engagement anniversary." />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Shahzaib & Momna — 3 Years</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Petit+Formal+Script&display=swap"
-    rel="stylesheet"
-  />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css" />
+<style>
+  :root{
+    --blush: #f6e1d8;
+    --blush-deep: #e8c4b3;
+    --cream: #fbf6ef;
+    --cream-warm: #f4ead9;
+    --rose: #b5686a;
+    --rose-deep: #8a3f45;
+    --gold: #b8935a;
+    --gold-soft: #d4b483;
+    --ink: #3a2a26;
+    --ink-soft: #6b4f48;
+    --serif: "Cormorant Garamond", "Times New Roman", serif;
+    --sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+    --script: "Dancing Script", cursive;
+    --urdu: "Noto Nastaliq Urdu", serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);
+    -webkit-font-smoothing:antialiased; overflow-x:hidden}
+  body{min-height:100vh}
+  a{color:inherit}
+  ::selection{background:var(--rose);color:#fff}
+
+  /* Petals */
+  .petals{position:fixed;inset:0;pointer-events:none;z-index:100;overflow:hidden}
+  .petal{position:absolute;top:-40px;opacity:0;will-change:transform}
+  @keyframes fall{
+    0%{transform:translateY(-40px) translateX(0) rotate(0deg);opacity:0}
+    10%{opacity:.9}
+    90%{opacity:.7}
+    100%{transform:translateY(110vh) translateX(var(--drift,60px)) rotate(var(--spin,360deg));opacity:0}
+  }
+
+  /* Password gate */
+  .gate{position:fixed;inset:0;z-index:1000;background:
+    radial-gradient(ellipse at 30% 20%, #f9ddd2 0%, transparent 55%),
+    radial-gradient(ellipse at 70% 80%, #ead6c1 0%, transparent 55%),
+    var(--cream);
+    display:flex;align-items:center;justify-content:center;padding:32px;
+    transition:opacity .9s ease, visibility .9s}
+  .gate.gone{opacity:0;visibility:hidden;pointer-events:none}
+  .gate-inner{text-align:center;max-width:460px}
+  .gate-inner .mark{font-family:var(--script);font-size:22px;color:var(--rose);
+    letter-spacing:.02em;margin-bottom:18px}
+  .gate-inner h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,54px);
+    line-height:1.05;color:var(--ink);margin-bottom:10px;font-style:italic}
+  .gate-inner p{font-family:var(--serif);color:var(--ink-soft);font-size:17px;margin-bottom:28px;
+    font-style:italic}
+  .gate-input{display:flex;gap:8px;align-items:center;justify-content:center}
+  .gate-input input{font-family:var(--serif);font-size:18px;font-style:italic;
+    padding:12px 16px;width:240px;border:none;border-bottom:1px solid var(--gold);
+    background:transparent;color:var(--ink);text-align:center;outline:none;
+    letter-spacing:.05em}
+  .gate-input input::placeholder{color:var(--ink-soft);opacity:.5}
+  .gate-btn{font-family:var(--sans);font-size:12px;letter-spacing:.2em;
+    text-transform:uppercase;padding:12px 22px;background:var(--ink);color:var(--cream);
+    border:none;cursor:pointer;transition:background .2s}
+  .gate-btn:hover{background:var(--rose-deep)}
+  .gate-hint{margin-top:14px;font-size:11px;color:var(--ink-soft);opacity:.6;
+    letter-spacing:.08em;text-transform:uppercase}
+  .gate-err{color:var(--rose-deep);font-style:italic;font-family:var(--serif);
+    margin-top:14px;min-height:18px;font-size:14px}
+
+  /* Hero */
+  .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;padding:80px 32px;text-align:center;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(246,225,216,.85) 0%, transparent 60%),
+      radial-gradient(ellipse at 85% 85%, rgba(232,196,179,.6) 0%, transparent 60%),
+      var(--cream)}
+  .hero-ornament{font-family:var(--script);font-size:22px;color:var(--rose);
+    letter-spacing:.02em;margin-bottom:18px;opacity:0;animation:fadeUp 1.2s .2s forwards}
+  .hero-names{font-family:var(--serif);font-weight:300;font-style:italic;
+    font-size:clamp(64px, 12vw, 168px);line-height:.95;color:var(--ink);
+    letter-spacing:-.02em;opacity:0;animation:fadeUp 1.4s .5s forwards}
+  .hero-names .amp{color:var(--rose);font-weight:400;display:inline-block;padding:0 .1em;
+    transform:translateY(.05em)}
+  .hero-sub{display:flex;align-items:center;gap:18px;margin-top:32px;opacity:0;
+    animation:fadeUp 1.4s .9s forwards}
+  .hero-sub .line{width:60px;height:1px;background:var(--gold)}
+  .hero-sub .date{font-family:var(--sans);font-size:12px;letter-spacing:.3em;
+    text-transform:uppercase;color:var(--ink-soft)}
+  .hero-years{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink-soft);
+    margin-top:34px;opacity:0;animation:fadeUp 1.4s 1.2s forwards}
+  .hero-years b{color:var(--rose-deep);font-weight:500;font-style:normal;
+    font-family:var(--serif);font-size:26px}
+  .scroll-cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+    font-family:var(--sans);font-size:10px;letter-spacing:.35em;text-transform:uppercase;
+    color:var(--ink-soft);opacity:0;animation:fadeUp 1.4s 1.8s forwards, bob 2.4s 2.4s infinite}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,6px)}}
+
+  /* Letter section */
+  .letter{padding:140px 32px;background:linear-gradient(180deg, var(--cream) 0%, #f4ead9 100%);
+    display:flex;flex-direction:column;align-items:center}
+  .letter-label{font-family:var(--sans);font-size:11px;letter-spacing:.4em;
+    text-transform:uppercase;color:var(--gold);margin-bottom:28px}
+  .letter-body{font-family:var(--serif);font-style:italic;font-weight:300;
+    font-size:clamp(28px, 4vw, 46px);line-height:1.45;color:var(--ink);
+    text-align:center;max-width:820px;min-height:4em}
+  .letter-urdu{font-family:var(--serif);font-style:italic;font-size:clamp(22px, 2.8vw, 32px);
+    color:var(--rose-deep);margin-top:26px;text-align:center;max-width:780px;
+    line-height:1.55;font-weight:400;min-height:2em}
+  .caret{display:inline-block;width:2px;height:.9em;background:var(--rose);
+    margin-left:4px;vertical-align:middle;animation:blink 1s infinite}
+  @keyframes blink{50%{opacity:0}}
+  .letter-sign{margin-top:50px;font-family:var(--script);font-size:36px;color:var(--rose-deep);
+    opacity:0;transform:translateY(10px);transition:opacity 1s 1s, transform 1s 1s}
+  .letter-sign.show{opacity:1;transform:translateY(0)}
+
+  /* Countdown */
+  .countdown{padding:120px 32px;background:var(--cream);
+    display:flex;flex-direction:column;align-items:center;text-align:center}
+  .section-eyebrow{font-family:var(--sans);font-size:11px;letter-spacing:.4em;
+    text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+  .section-title{font-family:var(--serif);font-weight:300;font-style:italic;
+    font-size:clamp(42px, 6vw, 72px);line-height:1.05;color:var(--ink);
+    margin-bottom:12px;letter-spacing:-.01em}
+  .section-title .accent{color:var(--rose)}
+  .section-sub{font-family:var(--serif);font-style:italic;color:var(--ink-soft);
+    font-size:19px;margin-bottom:60px;max-width:520px}
+  .countdown-grid{display:grid;grid-template-columns:repeat(4,minmax(0,120px));gap:10px}
+  .cd-unit{background:rgba(255,255,255,.55);border:.5px solid var(--blush-deep);
+    padding:22px 8px 18px;border-radius:2px;position:relative;overflow:hidden}
+  .cd-unit::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+    width:28px;height:1px;background:var(--gold)}
+  .cd-num{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5vw,52px);
+    color:var(--rose-deep);font-variant-numeric:tabular-nums;line-height:1;font-style:italic}
+  .cd-lbl{font-family:var(--sans);font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--ink-soft);margin-top:10px}
+  .cd-today{margin-top:40px;font-family:var(--serif);font-style:italic;font-size:22px;
+    color:var(--rose-deep);max-width:560px;line-height:1.5}
+
+  /* Timeline */
+  .timeline{padding:140px 32px;background:linear-gradient(180deg,#f4ead9 0%, var(--cream) 100%);
+    display:flex;flex-direction:column;align-items:center}
+  .timeline-inner{max-width:900px;width:100%;margin-top:60px;position:relative}
+  .timeline-inner::before{content:"";position:absolute;left:50%;top:20px;bottom:20px;
+    width:1px;background:linear-gradient(180deg,transparent,var(--gold) 12%,var(--gold) 88%,transparent);
+    transform:translateX(-.5px)}
+  .tl-item{display:grid;grid-template-columns:1fr 80px 1fr;gap:24px;margin-bottom:80px;
+    align-items:flex-start}
+  .tl-item:last-child{margin-bottom:0}
+  .tl-dot{grid-column:2;justify-self:center;width:14px;height:14px;border-radius:50%;
+    background:var(--cream);border:1.5px solid var(--rose);margin-top:12px;position:relative;z-index:2}
+  .tl-dot::after{content:"";position:absolute;inset:-6px;border-radius:50%;
+    border:1px solid var(--rose);opacity:.3}
+  .tl-date{grid-column:1;text-align:right;font-family:var(--sans);font-size:11px;
+    letter-spacing:.3em;text-transform:uppercase;color:var(--gold);padding-top:14px}
+  .tl-body{grid-column:3}
+  .tl-item.reverse .tl-date{grid-column:3;text-align:left;padding-top:14px}
+  .tl-item.reverse .tl-body{grid-column:1;text-align:right}
+  .tl-title{font-family:var(--serif);font-style:italic;font-weight:400;font-size:30px;
+    color:var(--ink);margin-bottom:8px;line-height:1.15}
+  .tl-text{font-family:var(--serif);font-size:17px;line-height:1.65;color:var(--ink-soft)}
+  .tl-text em{color:var(--rose-deep);font-weight:400}
+
+  /* Gallery */
+  .gallery{padding:140px 32px;background:var(--cream);display:flex;flex-direction:column;
+    align-items:center}
+  .g-grid{display:grid;gap:18px;width:100%;max-width:1180px;margin-top:60px;
+    grid-template-columns:repeat(6, 1fr);grid-auto-rows:180px}
+  .g-item{position:relative;overflow:hidden;border-radius:3px;background:var(--blush);
+    box-shadow:0 1px 0 rgba(0,0,0,.02), 0 20px 40px -24px rgba(138,63,69,.22);
+    cursor:pointer;transition:transform .5s ease}
+  .g-item:hover{transform:translateY(-3px)}
+  .g-item.wide{grid-column:span 3}
+  .g-item.tall{grid-row:span 2}
+  .g-item.sq{grid-column:span 2;grid-row:span 2}
+  .g-item.slim{grid-column:span 2}
+  .ph{position:absolute;inset:0;
+    background-image:repeating-linear-gradient(135deg, rgba(184,147,90,.18) 0, rgba(184,147,90,.18) 1px, transparent 1px, transparent 14px),
+      linear-gradient(135deg, #f6e1d8 0%, #e8c4b3 100%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px}
+  .ph-tag{font-family:"SF Mono","Courier New",monospace;font-size:10px;color:var(--rose-deep);
+    letter-spacing:.14em;text-transform:uppercase;text-align:center;line-height:1.6;
+    background:rgba(251,246,239,.75);padding:6px 10px;border:.5px dashed var(--rose)}
+  .g-caption{position:absolute;inset:0;background:linear-gradient(180deg,
+    rgba(58,42,38,0) 40%, rgba(58,42,38,.88) 100%);
+    display:flex;flex-direction:column;justify-content:flex-end;padding:20px 22px;
+    opacity:0;transition:opacity .5s ease;color:#fbf6ef}
+  .g-item:hover .g-caption{opacity:1}
+  .g-cap-label{font-family:var(--sans);font-size:10px;letter-spacing:.3em;
+    text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px}
+  .g-cap-title{font-family:var(--serif);font-style:italic;font-size:24px;line-height:1.2;
+    color:#fbf6ef}
+
+  /* Shayari */
+  .shayari{padding:160px 32px;background:
+    radial-gradient(ellipse at 50% 50%, rgba(232,196,179,.55) 0%, var(--cream) 70%);
+    text-align:center;display:flex;flex-direction:column;align-items:center}
+  .shayari-frame{max-width:680px;position:relative;padding:60px 40px}
+  .shayari-frame::before,.shayari-frame::after{content:"";position:absolute;width:60px;
+    height:60px;border:1px solid var(--gold);opacity:.6}
+  .shayari-frame::before{top:0;left:0;border-right:none;border-bottom:none}
+  .shayari-frame::after{bottom:0;right:0;border-left:none;border-top:none}
+  .shayari-label{font-family:var(--sans);font-size:11px;letter-spacing:.4em;
+    text-transform:uppercase;color:var(--gold);margin-bottom:32px}
+  .shayari-text{font-family:var(--serif);font-style:italic;font-weight:300;
+    font-size:clamp(22px,2.6vw,28px);line-height:1.9;color:var(--ink)}
+  .shayari-text span{display:block}
+  .shayari-text .highlight{color:var(--rose-deep);font-weight:400}
+  .shayari-text .spacer{height:20px}
+  .shayari-attr{margin-top:36px;font-family:var(--sans);font-size:11px;letter-spacing:.25em;
+    text-transform:uppercase;color:var(--ink-soft);opacity:.7}
+
+  /* Closing */
+  .closing{padding:160px 32px 100px;background:linear-gradient(180deg, var(--cream) 0%, #ead3c1 100%);
+    text-align:center;display:flex;flex-direction:column;align-items:center;position:relative;overflow:hidden}
+  .closing-orn{font-family:var(--script);font-size:26px;color:var(--rose);margin-bottom:20px}
+  .closing-title{font-family:var(--serif);font-weight:300;font-style:italic;
+    font-size:clamp(48px, 7vw, 86px);line-height:1.05;color:var(--ink);max-width:880px;
+    letter-spacing:-.01em}
+  .closing-title .accent{color:var(--rose-deep)}
+  .closing-sig{margin-top:60px;font-family:var(--script);font-size:56px;color:var(--rose-deep);
+    line-height:1}
+  .closing-date{margin-top:28px;font-family:var(--sans);font-size:11px;letter-spacing:.4em;
+    text-transform:uppercase;color:var(--ink-soft)}
+  .closing-heart{margin-top:34px;font-size:22px;color:var(--rose);animation:beat 2s infinite}
+  @keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.18)}30%{transform:scale(1)}
+    45%{transform:scale(1.12)}60%{transform:scale(1)}}
+
+  /* Fade-in on scroll */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity 1s ease, transform 1s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  /* Mobile */
+  @media (max-width: 780px){
+    .countdown-grid{grid-template-columns:repeat(4, 1fr);gap:6px}
+    .cd-unit{padding:18px 4px 14px}
+    .g-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}
+    .g-item.wide,.g-item.sq,.g-item.slim{grid-column:span 2}
+    .g-item.tall{grid-row:span 1}
+    .timeline-inner::before{left:20px}
+    .tl-item, .tl-item.reverse{grid-template-columns:40px 1fr;gap:16px}
+    .tl-dot{grid-column:1;justify-self:center;margin-top:10px}
+    .tl-date, .tl-item.reverse .tl-date{grid-column:2;grid-row:1;text-align:left;padding-top:0;margin-bottom:6px}
+    .tl-body, .tl-item.reverse .tl-body{grid-column:2;grid-row:2;text-align:left}
+  }
+</style>
 </head>
 <body>
 
-  <!-- ═══════════ GRAIN OVERLAY ═══════════ -->
-  <div class="grain" aria-hidden="true"></div>
+<div id="root"></div>
 
-  <!-- ═══════════ HERO ═══════════ -->
-  <header class="hero" id="top">
-    <div class="hero-inner">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-      <div class="hero-ornament reveal" aria-hidden="true">
-        <svg viewBox="0 0 120 20" fill="none">
-          <path d="M0 10 H48" stroke="currentColor" stroke-width="0.6"/>
-          <circle cx="52" cy="10" r="1.2" fill="currentColor"/>
-          <path d="M56 10 Q60 4 64 10 Q60 16 56 10 Z" fill="currentColor" opacity="0.8"/>
-          <circle cx="68" cy="10" r="1.2" fill="currentColor"/>
-          <path d="M72 10 H120" stroke="currentColor" stroke-width="0.6"/>
-        </svg>
-      </div>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="components.jsx"></script>
+<script type="text/babel" src="app.jsx"></script>
 
-      <p class="hero-eyebrow reveal" data-delay="1">
-        The Twenty-Third of April · Two Thousand Twenty-Six
-      </p>
-
-      <h1 class="hero-title">
-        <span class="reveal" data-delay="2">A Year</span>
-        <em class="reveal" data-delay="3">of loving you</em>
-      </h1>
-
-      <p class="hero-names reveal" data-delay="4">
-        <span>[YOUR NAME]</span>
-        <span class="amp">&amp;</span>
-        <span>[HER NAME]</span>
-      </p>
-
-      <figure class="hero-image reveal" data-delay="5">
-        <!-- ▼ Replace with your generated hero photo (slot 01 in README) -->
-        <img src="images/placeholder.svg" data-slot="01-hero" alt="The two of us, a year ago" />
-        <figcaption>— our first chapter —</figcaption>
-      </figure>
-
-      <a href="#opening" class="hero-scroll reveal" data-delay="6" aria-label="Scroll to begin">
-        <span>turn the page</span>
-        <svg viewBox="0 0 24 40" aria-hidden="true"><path d="M12 2 V34 M6 28 L12 34 L18 28" stroke="currentColor" stroke-width="1" fill="none"/></svg>
-      </a>
-    </div>
-  </header>
-
-  <!-- ═══════════ OPENING / BLESSING ═══════════ -->
-  <section class="opening" id="opening">
-    <div class="opening-inner reveal">
-      <p class="bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-      <blockquote>
-        <p>
-          “And among His signs is that He created for you, from yourselves,
-          mates that you may find tranquility in them; and He placed between you
-          <em>affection</em> and <em>mercy</em>.”
-        </p>
-        <cite>— Ar-Rūm · 30:21</cite>
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- ═══════════ CHAPTER ONE ═══════════ -->
-  <section class="chapter chapter-one">
-    <div class="chapter-inner">
-      <p class="chapter-label reveal">Chapter One</p>
-      <h2 class="chapter-title reveal" data-delay="1">
-        <em>The Day</em> You Said Yes
-      </h2>
-
-      <div class="chapter-split">
-        <figure class="chapter-image reveal" data-delay="2">
-          <!-- ▼ Slot 02 in README · the proposal moment -->
-          <img src="images/placeholder.svg" data-slot="02-proposal" alt="The moment she said yes" />
-          <figcaption>[CITY] · [ENGAGEMENT DATE]</figcaption>
-        </figure>
-
-        <div class="chapter-text reveal" data-delay="3">
-          <p class="dropcap">
-            A year ago, the world paused long enough for me to ask the one
-            question I had been carrying quietly for months. You smiled — that
-            smile — and the whole afternoon turned gold.
-          </p>
-          <p>
-            <em>[Write a paragraph here about the day — where you were,
-            what the weather was like, what she was wearing, the sound of
-            her laugh, the thing you will never forget.]</em>
-          </p>
-          <p>
-            And somewhere between that <em>yes</em> and this moment, a whole
-            year of us happened.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════ ORNAMENT DIVIDER ═══════════ -->
-  <div class="divider" aria-hidden="true">
-    <svg viewBox="0 0 300 30" fill="none">
-      <path d="M0 15 H120" stroke="currentColor" stroke-width="0.5"/>
-      <path d="M125 15 Q135 5 145 15 Q155 25 165 15 Q175 5 185 15" stroke="currentColor" stroke-width="0.6" fill="none"/>
-      <circle cx="150" cy="15" r="2" fill="currentColor"/>
-      <path d="M180 15 H300" stroke="currentColor" stroke-width="0.5"/>
-    </svg>
-  </div>
-
-  <!-- ═══════════ CHAPTER TWO · GALLERY ═══════════ -->
-  <section class="chapter chapter-two">
-    <div class="chapter-inner">
-      <p class="chapter-label reveal">Chapter Two</p>
-      <h2 class="chapter-title reveal" data-delay="1">
-        A Year <em>in Frames</em>
-      </h2>
-      <p class="chapter-sub reveal" data-delay="2">
-        Little scenes that stitched a whole year together.
-      </p>
-
-      <div class="gallery">
-        <figure class="gallery-item gallery-tall reveal" data-delay="1">
-          <img src="images/placeholder.svg" data-slot="03-morning" alt="A quiet morning" />
-          <figcaption><span>i.</span> the quiet mornings</figcaption>
-        </figure>
-        <figure class="gallery-item reveal" data-delay="2">
-          <img src="images/placeholder.svg" data-slot="04-laughter" alt="Caught mid-laugh" />
-          <figcaption><span>ii.</span> that laugh of yours</figcaption>
-        </figure>
-        <figure class="gallery-item reveal" data-delay="3">
-          <img src="images/placeholder.svg" data-slot="05-walk" alt="A walk together" />
-          <figcaption><span>iii.</span> the long walks</figcaption>
-        </figure>
-        <figure class="gallery-item gallery-wide reveal" data-delay="4">
-          <img src="images/placeholder.svg" data-slot="06-rain" alt="Rain and tea" />
-          <figcaption><span>iv.</span> rain, tea, you</figcaption>
-        </figure>
-        <figure class="gallery-item reveal" data-delay="5">
-          <img src="images/placeholder.svg" data-slot="07-celebration" alt="Celebrating" />
-          <figcaption><span>v.</span> small celebrations</figcaption>
-        </figure>
-        <figure class="gallery-item reveal" data-delay="6">
-          <img src="images/placeholder.svg" data-slot="08-stillness" alt="Stillness" />
-          <figcaption><span>vi.</span> the stillness</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════ CHAPTER THREE · LETTER ═══════════ -->
-  <section class="chapter letter">
-    <div class="letter-inner">
-      <p class="chapter-label reveal">Chapter Three</p>
-      <h2 class="chapter-title reveal" data-delay="1">
-        A Letter <em>to You</em>
-      </h2>
-
-      <article class="letter-body reveal" data-delay="2">
-        <p class="letter-salutation">To my <em>[HER NAME]</em>,</p>
-
-        <p class="dropcap">
-          If I had to measure this year, I would not count it in months. I
-          would count it in the number of times you made me laugh before
-          coffee, the number of prayers we whispered at the same hour without
-          knowing, the number of small, ordinary afternoons that felt like
-          small, impossible miracles.
-        </p>
-
-        <p>
-          <em>[Write your own paragraphs here — the things you never quite
-          said out loud, the promises you want her to hold onto, the way
-          your life has softened around her.]</em>
-        </p>
-
-        <p>
-          A year ago, you gave me a <em>yes</em> that changed the shape of
-          my life. Today, I want to give it back to you in every form I
-          know how — in every morning, every Ramadan, every silence, every
-          storm. Insha’Allah, for a hundred more years of us.
-        </p>
-
-        <p class="letter-close">Yours, always —</p>
-        <p class="signature">[Your Name]</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- ═══════════ CHAPTER FOUR · FUTURE ═══════════ -->
-  <section class="chapter future">
-    <div class="future-inner">
-      <p class="chapter-label reveal">Chapter Four</p>
-      <h2 class="chapter-title reveal" data-delay="1">
-        Forever, <em>Insha’Allah</em>
-      </h2>
-
-      <figure class="future-image reveal" data-delay="2">
-        <!-- ▼ Slot 09 in README · walking into forever -->
-        <img src="images/placeholder.svg" data-slot="09-future" alt="Walking into forever" />
-      </figure>
-
-      <p class="future-text reveal" data-delay="3">
-        One year already — and still the best chapters are the ones we
-        haven’t written yet. Here is to our Nikah, our home, our small
-        rituals, our quiet years. Here is to you, always.
-      </p>
-    </div>
-  </section>
-
-  <!-- ═══════════ FOOTER ═══════════ -->
-  <footer class="site-footer">
-    <div class="ornament-sm" aria-hidden="true">
-      <svg viewBox="0 0 60 20" fill="none">
-        <path d="M0 10 H22" stroke="currentColor" stroke-width="0.4"/>
-        <path d="M26 10 Q30 4 34 10 Q30 16 26 10 Z" fill="currentColor"/>
-        <path d="M38 10 H60" stroke="currentColor" stroke-width="0.4"/>
-      </svg>
-    </div>
-    <p class="monogram"><em>[A]</em> &amp; <em>[H]</em></p>
-    <p class="footer-date">2025 — Forever</p>
-    <p class="footer-note">made with love, for you.</p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
