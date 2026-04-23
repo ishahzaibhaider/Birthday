@@ -222,12 +222,12 @@ function Timeline() {
     {
       date: "The Beginning",
       title: "when the world first made sense",
-      body: "before i knew your name, something in me was already waiting. then you arrived — not loudly, not all at once — but completely.",
+      body: "before i knew your name, something in me was already waiting. then you arrived  not loudly, not all at once  but completely.",
     },
     {
       date: "Falling",
       title: "the slow, beautiful fall",
-      body: "conversations that wouldn't end. laughter that echoed after you'd gone home. one day i looked up and realized — <em>yeh toh muhabbat thi.</em>",
+      body: "conversations that wouldn't end. laughter that echoed after you'd gone home. one day i looked up and realized yeh toh muhabbat thi.</em>",
     },
     {
       date: "The Proposal",
@@ -242,7 +242,7 @@ function Timeline() {
     {
       date: "Today & Always",
       title: "and the story keeps writing itself",
-      body: "every sunrise since is a new page of the same book. <em>mein tumhein kal, aaj sy ziada piyarr kroon ga</em> — a promise i renew each day.",
+      body: "every sunrise since is a new page of the same book. mein tumhein kal, aaj sy ziada piyarr kroon ga</em> — a promise i renew each day.",
     },
   ];
 
@@ -315,13 +315,13 @@ function Shayari() {
         <div className="shayari-text">
           <span>Hota agar main shayar koi</span>
           <span className="spacer"/>
-          <span className="highlight">Nazmein likhta teri adaon pe</span>
-          <span>Shayari karta teri aankhon pe</span>
-          <span>Ghazlein likhta teri aahon pe</span>
+          <span className="highlight">Nazmein likhta teri adaon py</span>
+          <span>Shayari krta teri aankhon py</span>
+          <span>Ghazlein likhta teri aahon py</span>
           <span className="spacer"/>
-          <span>Kayal hota teri chaal ka</span>
-          <span>Sadke jaata teri nigahon pe</span>
-          <span className="highlight">Mar hi jaata tere husn par</span>
+          <span>Qayal hota teri chaal ka</span>
+          <span>Sadky jaata teri nigahon pe</span>
+          <span className="highlight">Mrr hee jaata tere husn par</span>
           <span>Toot kar girta teri baahon mein</span>
           <span className="spacer"/>
           <span>Hota agar main shayar koi...</span>
